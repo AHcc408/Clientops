@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ClientOps is an agent-native workspace for independent professionals." />
+    <title>ClientOps — Client work, under control</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="ClientOps home"><span class="brand-mark">C</span>ClientOps</a>
+        <div class="week">Thursday, Aug 27 <span>•</span> Your workday is on track</div>
+        <button class="avatar" aria-label="Open profile">UK</button>
+      </header>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">YOUR CLIENT COMMAND CENTER</p>
+          <h1>Good morning, Utpal.</h1>
+          <p class="hero-copy">Three client moments need your attention. Your agent has prepared the next best actions.</p>
+        </div>
+        <div class="hero-actions">
+          <button class="button secondary" id="seedButton">Reset demo</button>
+          <button class="button primary" id="newTaskButton">+ Add work item</button>
+        </div>
+      </section>
+      <section class="metrics" aria-label="Business overview">
+        <article><p>Outstanding</p><strong id="outstanding">₹68,500</strong><span>across 3 invoices</span></article>
+        <article><p>Active projects</p><strong id="projectCount">4</strong><span>2 due this week</span></article>
+        <article><p>Follow-ups due</p><strong id="followupCount">3</strong><span class="amber">Do these today</span></article>
+        <article><p>Collected this month</p><strong>₹1,42,000</strong><span class="green">↑ 18% vs July</span></article>
+      </section>
+      <section class="content-grid">
+        <section class="panel priority-panel">
+          <div class="panel-heading"><div><p class="eyebrow">AGENT BRIEFING</p><h2>Your next best actions</h2></div><span class="live-dot">LIVE</span></div>
+          <div class="brief-card urgent"><div class="brief-icon">₹</div><div><strong>Send invoice to Nila at Bloom</strong><p>Milestone 2 was marked complete 2 days ago. ₹32,500 is ready to bill.</p><button class="text-action" data-action="invoice">Review invoice →</button></div></div>
+          <div class="brief-card"><div class="brief-icon">↗</div><div><strong>Follow up with Arjun</strong><p>Your proposal has been waiting for 5 days. A short nudge is drafted.</p><button class="text-action" data-action="followup">Review follow-up →</button></div></div>
+          <div class="brief-card"><div class="brief-icon">✓</div><div><strong>Confirm delivery scope with Atlas</strong><p>Two new requests may add 6 hours beyond the signed scope.</p><button class="text-action" data-action="scope">See scope change →</button></div></div>
+        </section>
+        <section class="panel pipeline-panel">
+          <div class="panel-heading"><div><p class="eyebrow">PIPELINE</p><h2>Projects at a glance</h2></div><button class="text-action" id="showProjects">View all →</button></div>
+          <div id="projectList" class="project-list"></div>
+        </section>
+      </section>
+      <section class="panel work-panel"><div class="panel-heading"><div><p class="eyebrow">TODAY'S DELIVERY</p><h2>Work queue</h2></div><span id="completionLabel">0 of 4 complete</span></div><div id="taskList" class="task-list"></div></section>
+      <section class="webmcp-note"><span>✦</span><div><strong>Built for humans and agents</strong><p>ClientOps exposes safe, structured WebMCP tools for projects, proposals, milestones, invoices, and follow-ups. Financial actions are always created as drafts for your approval.</p></div><code id="mcpStatus">WebMCP: checking browser support…</code></section>
+    </main>
+    <dialog id="actionDialog"><div id="dialogContent"></div><form method="dialog"><button class="button secondary">Close</button></form></dialog>
+    <script src="./app.js"></script>
+  </body>
+</html>
